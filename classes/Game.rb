@@ -5,4 +5,9 @@ class Game
     @game_over = false
   end
 
+  def play_game
+    puts "Player 1 lives: #{@players[0].lives}"
+    puts "Player 2 lives: #{@players[1].lives}"
+  end
+
 end
