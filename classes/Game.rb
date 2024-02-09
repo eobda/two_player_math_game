@@ -10,8 +10,15 @@ class Game
     # test code to check functionality of check_score
     @players[@current_player].lose_life
     @players[@current_player].lose_life
+    switch_player!
+    @players[@current_player].lose_life
+    switch_player!
     @players[@current_player].lose_life
     puts check_score(@players[0], @players[1])
+  end
+
+  def switch_player!
+    @current_player = @current_player == 0 ? 1 : 0
   end
 
   def play_turn
