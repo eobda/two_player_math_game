@@ -1,5 +1,6 @@
 require './classes/Game'
 require './classes/Player'
+require './classes/Question'
 
 player_1 = Player.new
 player_2 = Player.new
