@@ -41,6 +41,7 @@ class Game
       end_game
     else
       puts "P1: #{player_1.lives}/3 vs P2: #{player_2.lives}/3"
+      puts "----- NEW TURN -----"
     end
   end
 
