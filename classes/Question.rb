@@ -8,4 +8,8 @@ class Question
   def ask_question
     "What does #{@num_1} + #{@num_2} equal?"
   end
+
+  def correct?(guess)
+    guess == @correct_answer
+  end
 end
