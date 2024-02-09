@@ -7,14 +7,13 @@ class Game
   end
 
   def play_game
-    # test code to check functionality
-    @players[@current_player].lose_life
-    @players[@current_player].lose_life
-    switch_player!
-    @players[@current_player].lose_life
-    switch_player!
-    @players[@current_player].lose_life
-    check_score(@players[0], @players[1])
+    while !@game_over
+      play_turn
+      check_score(@players[0], @players[1])
+      switch_player!
+    end
+    puts "----- GAME OVER -----"
+    puts "Good bye!"
   end
 
   def switch_player!
@@ -47,7 +46,5 @@ class Game
 
   def end_game
     @game_over = true
-    puts "----- GAME OVER -----"
-    puts "Good bye!"
   end
 end
