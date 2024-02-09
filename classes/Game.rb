@@ -7,14 +7,14 @@ class Game
   end
 
   def play_game
-    # test code to check functionality of check_score
+    # test code to check functionality
     @players[@current_player].lose_life
     @players[@current_player].lose_life
     switch_player!
     @players[@current_player].lose_life
     switch_player!
     @players[@current_player].lose_life
-    puts check_score(@players[0], @players[1])
+    check_score(@players[0], @players[1])
   end
 
   def switch_player!
@@ -38,9 +38,16 @@ class Game
   def check_score(player_1, player_2)
     if player_1.lives == 0 || player_2.lives == 0
       @winning_player = player_1.lives > 0 ? 0 : 1
-      "Player #{@winning_player + 1} wins with a score of #{@players[@winning_player].lives}/3"
+      puts "Player #{@winning_player + 1} wins with a score of #{@players[@winning_player].lives}/3"
+      end_game
     else
-      "P1: #{player_1.lives}/3 vs P2: #{player_2.lives}/3"
+      puts "P1: #{player_1.lives}/3 vs P2: #{player_2.lives}/3"
     end
+  end
+
+  def end_game
+    @game_over = true
+    puts "----- GAME OVER -----"
+    puts "Good bye!"
   end
 end
